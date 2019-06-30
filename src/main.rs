@@ -10,7 +10,7 @@ pub extern "C" fn do_unwind(err_code: i32) {
 
 fn main() {
     unsafe {
-        // Entry(do_unwind);
-        Entry(None);
+        Entry(Some(do_unwind));
+        // Entry(None);
     }
 }
