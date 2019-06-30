@@ -10,11 +10,11 @@ void do_unwind(int32_t);
 void Work() {
     printf("Doing work...\n");
     if (ErrorHandler != NULL) {
-        printf("Calling injected error handler\n");
+        fprintf(stderr, "Calling injected error handler\n");
         (*ErrorHandler)(42);
     }
     else {
-        printf("Calling statically-linked error handler");
+        fprintf(stderr, "Calling statically-linked error handler\n");
         do_unwind(-42);
     }
 }
