@@ -3,7 +3,9 @@
 
 #include "HasDestructorC.h"
 
-void(*ErrorHandler)(int errCode) = NULL;
+void(*ErrorHandler)(int32_t errCode) = NULL;
+
+extern void do_unwind(int32_t);
 
 void Work() {
     printf("Doing work...\n");
@@ -12,11 +14,13 @@ void Work() {
         (*ErrorHandler)(42);
     }
     else {
-        printf("An error occurred, but no handler was injected.");
+        printf("Calling statically-linked error handler");
+        // TODO: resolve link error
+        // do_unwind(-42);
     }
 }
 
-void Entry(void(*onErr)(int errCode)) {
+void Entry(void(*onErr)(int32_t errCode)) {
     ErrorHandler = onErr;
     DoSomeWork(&Work);
 }

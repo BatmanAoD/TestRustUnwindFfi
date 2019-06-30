@@ -5,4 +5,7 @@ authors = ["Kyle Strand <kyle.strand@rms.com>"]
 edition = "2018"
 build = "build.rs"
 
+# [profile.dev]
+# panic = "abort"
+
 [dependencies]

@@ -5,7 +5,7 @@
 class HasDestructor {
 public:
     ~HasDestructor() {
-        // std::cout << "HasDestructor(" << this << ") called" << std::endl;
+        std::cout << "HasDestructor(" << this << ") called" << std::endl;
     }
 };
 

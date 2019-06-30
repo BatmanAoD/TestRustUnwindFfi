@@ -1,3 +1,5 @@
 #pragma once
 
-void Entry(void(*onErr)(int errCode));
+#include <stdint.h>
+
+void Entry(void(*onErr)(int32_t errCode));
