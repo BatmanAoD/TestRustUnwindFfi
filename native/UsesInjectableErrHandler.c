@@ -5,7 +5,7 @@
 
 void(*ErrorHandler)(int32_t errCode) = NULL;
 
-extern void do_unwind(int32_t);
+void do_unwind(int32_t);
 
 void Work() {
     printf("Doing work...\n");
@@ -15,8 +15,7 @@ void Work() {
     }
     else {
         printf("Calling statically-linked error handler");
-        // TODO: resolve link error
-        // do_unwind(-42);
+        do_unwind(-42);
     }
 }
 
