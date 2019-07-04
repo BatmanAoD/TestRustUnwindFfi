@@ -9,3 +9,4 @@ build = "build.rs"
 # panic = "abort"
 
 [dependencies]
+panic-runtime = { path = "src/panic-runtime" }

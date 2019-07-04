@@ -1,3 +1,5 @@
+// #![no_std]
+
 #![feature(unwind_attributes)]
 
 #[link(name = "DoWork", kind = "static")]
@@ -8,7 +10,7 @@ extern {
 #[no_mangle]
 #[unwind(allowed)]
 pub extern "C" fn do_unwind(err_code: i32) {
-    panic!(format!("Panic from 'DoUnwind'; error code: {}", err_code));
+    panic!("Panic from 'DoUnwind'; error code: {}", err_code);
 }
 
 fn main() {
